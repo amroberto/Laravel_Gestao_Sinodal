@@ -44,7 +44,7 @@ class EstadoTableSeeder extends Seeder
         ];
 
         foreach ($estados as $estado) {
-            DB::table('estado')->insert([
+            DB::table('estados')->insert([
                 'id' => $estado[0],
                 'nome' => $estado[1],
                 'uf' => $estado[2],
