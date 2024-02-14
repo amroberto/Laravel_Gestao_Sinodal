@@ -12,7 +12,7 @@ class EstadoController extends Controller
      */
     public function index()
     {
-        $estados = Estado::paginate(10);
+        $estados = Estado::orderBy('nome', 'asc')->paginate(10);
         return view('estados.index', ['estados' => $estados]);
     }
 
@@ -34,18 +34,24 @@ class EstadoController extends Controller
 
     /**
      * Display the specified resource.
+     * @param \App\Models\Estado $estado
+     * @return \Illuminate\Http\Response
      */
-    public function show(string $id)
+    public function show(Estado $estado)
     {
-        //
+        return view('estados.show', ['estado' => $estado ]);
     }
 
     /**
      * Show the form for editing the specified resource.
+     *
+     * @param \App\Models\Estado $estado
+     * @return \Illuminate\Http\Response
+     *
      */
-    public function edit(string $id)
+    public function edit(Estado $estado)
     {
-        //
+        return view('estados.edit', ['estado' => $estado ]);
     }
 
     /**

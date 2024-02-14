@@ -16,20 +16,19 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Mome</th>
+                                <th>Nome</th>
                                 <th>UF</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($estados as $estado)
+                            @foreach ($estados as $key => $estado)
                             <tr>
-                                <td>{{ $estado->id }}</td>
-                                <td>{{ $estado->nome }}</td>
-                                <td>{{ $estado->uf }}</td>
+                                <td>{{ $estado['id'] }}</td>
+                                <td>{{ $estado['nome'] }}</td>
+                                <td>{{ $estado['uf'] }}</td>
                                 <td>
-
-                                    <a href="" class="btn btn-success mx-2"><i class="bi bi-eye-fill"></i> Visualizar</a>
+                                    <a href="{{ route('estados.show', $estado['id']) }}" class="btn btn-success mx-2"><i class="bi bi-eye-fill"></i> Visualizar</a>
                                 </td>
                             </tr>
                             @endforeach
