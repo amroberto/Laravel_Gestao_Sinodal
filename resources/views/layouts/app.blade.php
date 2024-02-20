@@ -30,25 +30,29 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                       <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                            <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                Cadastro
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu">
-                                <li><a class="dropdown-item" href="{{ route('estados.index') }}">Estados</a></li>
-                                <li><a class="dropdown-item" href="#">Cidades</a></li>
-                                <li><a class="dropdown-item" href="#">Grupos</a></li>
-                            </ul>
-                            </li>
-                        </ul>
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                                </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item dropdown">
+                                    <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Secretaria
+                                    </button>
+                                        <ul class="dropdown-menu dropdown-menu">
+                                            <li><a class="dropdown-item" href="#"><i><b>--Cadastro--</b></i></a></li>
+                                            <li><a class="dropdown-item" href="{{ route('estados.index') }}">Estados</a></li>
+                                            <li><a class="dropdown-item" href="#">Cidades</a></li>
+                                            <li><a class="dropdown-item" href="#">Grupos</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="#"><b><i>--Relatórios--</i></b></a></li>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
