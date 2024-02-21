@@ -12,9 +12,17 @@ class CidadeController extends Controller
      */
     public function index()
     {
-        //
+        $cidades = Cidade::all()->paginate(10);
+        return view('cidade.index',['cidades' => $cidades]);
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $results = Cidade::where('nome', 'like', "%$search%")->get();
+
+        return view('cidades.index', ['results' => $results]);
+    }
     /**
      * Show the form for creating a new resource.
      */

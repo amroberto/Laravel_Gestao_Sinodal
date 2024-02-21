@@ -43,7 +43,7 @@
                                         <ul class="dropdown-menu dropdown-menu">
                                             <li><a class="dropdown-item" href="#"><i><b>--Cadastro--</b></i></a></li>
                                             <li><a class="dropdown-item" href="{{ route('estados.index') }}">Estados</a></li>
-                                            <li><a class="dropdown-item" href="#">Cidades</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('cidades.index') }}">Cidades</a></li>
                                             <li><a class="dropdown-item" href="#">Grupos</a></li>
                                             <li><hr class="dropdown-divider"></li>
                                             <li><a class="dropdown-item" href="#"><b><i>--Relatórios--</i></b></a></li>
