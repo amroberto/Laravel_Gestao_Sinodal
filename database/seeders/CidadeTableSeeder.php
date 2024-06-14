@@ -5577,7 +5577,7 @@ class CidadeTableSeeder extends Seeder
             [5222054,'VICENTINOPOLIS','5222054',52],
             [5222203,'VILA BOA','5222203',52],
             [5222302,'VILA PROPICIO','5222302',52],
-            [5300108,'BRASILIA','5300108',53],
+            [5300108,'BRASILIA','5300108',53]
         ];
 
         foreach ($cidades as $cidade) {

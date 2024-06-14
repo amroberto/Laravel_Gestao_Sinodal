@@ -40,7 +40,7 @@ class EstadoTableSeeder extends Seeder
             [50, 'Mato Grosso do Sul', 'MS'],
             [51, 'Mato Grosso', 'MT'],
             [52, 'Goiás', 'GO'],
-            [53, 'Distrito Federal', 'DF'],
+            [53, 'Distrito Federal', 'DF']
         ];
 
         foreach ($estados as $estado) {
