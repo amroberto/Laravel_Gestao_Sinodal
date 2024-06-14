@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CidadeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of thep resource.
      */
     public function index()
     {

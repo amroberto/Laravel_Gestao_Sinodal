@@ -9,5 +9,5 @@ class Cidade extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome', 'codigo_ibge', 'estado_id'];
+    protected $fillable = ['id', 'nome', 'codigo_ibge', 'estado_id'];
 }
