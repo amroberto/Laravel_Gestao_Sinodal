@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cargo;
 
 class CargoController extends Controller
 {
@@ -11,7 +12,8 @@ class CargoController extends Controller
      */
     public function index()
     {
-        //
+        $cargos = Cargo::orderBy('nome', 'asc')->paginate(10);
+        return view('cargo.index', ['cargos' => $cargos]);
     }
 
     /**
@@ -19,7 +21,7 @@ class CargoController extends Controller
      */
     public function create()
     {
-        //
+        return view('cargo.create');
     }
 
     /**

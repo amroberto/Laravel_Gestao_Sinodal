@@ -22,5 +22,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('estados', App\Http\Controllers\EstadoController::class);
 Route::resource('cidades', App\Http\Controllers\CidadeController::class);
+Route::resource('cargos', App\Http\Controllers\CargoController::class);
 Route::get('/search', [App\Http\Controllers\CidadeController::class, 'search'])->name('cidades.search');
 

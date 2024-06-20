@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             EstadoTableSeeder::class,
             CidadeTableSeeder::class,
+            CargoTableSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 
