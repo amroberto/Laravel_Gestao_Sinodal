@@ -1,66 +1,77 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Gestão Sinodal
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Descrição do Projeto
 
-## About Laravel
+Este é um projeto de gestão Sinodal desenvolvido em PHP utilizando o framework Laravel. O sistema é destinado a facilitar a administração e organização de diversas atividades e processos relacionados ao funcionamento de um Sínodo, uma entidade administrativa ligada a uma Igreja. **Nota:** Este projeto está no início do desenvolvimento e novas funcionalidades e melhorias estão sendo adicionadas regularmente.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### O que é um Sínodo?
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Um Sínodo é uma assembleia ou conselho eclesiástico que se reúne para discutir e tomar decisões sobre assuntos doutrinários, administrativos e pastorais. Na tradição cristã, especialmente nas igrejas protestantes e ortodoxas, os Sínodos desempenham um papel crucial na governança e supervisão das atividades da igreja em diversas regiões. Eles são formados por clérigos e, em alguns casos, por membros leigos da igreja, que juntos deliberam sobre questões que afetam a comunidade religiosa.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Funcionalidades do Projeto
 
-## Learning Laravel
+- **Gestão de Estados**: Cadastro e manutenção de informações sobre os estados.
+- **Gestão de Cidades**: Cadastro e manutenção de informações sobre as cidades.
+- **Gestão de Cargos**: Cadastro e manutenção de informações sobre os cargos dentro da estrutura Sinodal.
+- **Relatórios**: Geração de relatórios para facilitar a análise e tomada de decisões.
+- **Autenticação e Autorização**: Sistema de login e controle de acesso para garantir a segurança das informações.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Tecnologias Utilizadas
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Linguagem de Programação**: PHP
+- **Framework**: Laravel
+- **Banco de Dados**: MySQL (ou o banco de dados de sua escolha)
+- **Front-end**: Blade Templates, Bootstrap
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Instalação
 
-## Laravel Sponsors
+Para instalar e executar este projeto localmente, siga as instruções abaixo:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. Clone o repositório:
+    ```bash
+    git clone git@github.com:amroberto/Laravel_Gestao_Sinodal.git
+    ```
 
-### Premium Partners
+2. Navegue até o diretório do projeto:
+    ```bash
+    cd Laravel_Gestao_Sinodal
+    ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+3. Instale as dependências do Composer:
+    ```bash
+    composer install
+    ```
 
-## Contributing
+4. Copie o arquivo `.env.example` para `.env` e configure suas variáveis de ambiente:
+    ```bash
+    cp .env.example .env
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. Gere a chave da aplicação:
+    ```bash
+    php artisan key:generate
+    ```
 
-## Code of Conduct
+6. Execute as migrações para criar as tabelas no banco de dados:
+    ```bash
+    php artisan migrate
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7. Inicie o servidor de desenvolvimento:
+    ```bash
+    php artisan serve
+    ```
 
-## Security Vulnerabilities
+## Contribuição
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Se você deseja contribuir com este projeto, por favor, siga as diretrizes abaixo:
 
-## License
+1. Fork este repositório.
+2. Crie uma branch para sua feature (`git checkout -b feature/nome-da-feature`).
+3. Commit suas mudanças (`git commit -am 'Adiciona nova feature'`).
+4. Envie para a branch (`git push origin feature/nome-da-feature`).
+5. Abra um Pull Request.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
