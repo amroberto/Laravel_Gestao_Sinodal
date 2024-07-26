@@ -16,7 +16,7 @@ class CidadeController extends Controller
         if($search) {
             $cidades = Cidade::where('nome', 'like', "%$search%")->paginate(15);
         } else {
-            $cidades = Cidade::orderBy("id","desc")->paginate(15);
+            $cidades = Cidade::orderBy("nome","asc")->paginate(15);
         }
         return view('cidades.index', ['cidades' => $cidades]);
     }
@@ -41,7 +41,8 @@ class CidadeController extends Controller
      */
     public function show(Cidade $cidade)
     {
-        //
+        
+        return view('cidades.show', ['cidade' => $cidade ]);
     }
 
     /**

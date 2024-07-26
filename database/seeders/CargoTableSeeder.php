@@ -19,7 +19,8 @@ class CargoTableSeeder extends Seeder
             [3, 'Tesoureiro'],
             [4, 'Vice-tesoureiro'],
             [5, 'Secretário'],
-            [6, 'Vice-secretário']
+            [6, 'Vice-secretário'],
+            [7, 'Conselheiro Sinodal']
         ];
 
         foreach ($cargos as $cargo) {
