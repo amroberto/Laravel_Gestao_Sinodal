@@ -15,6 +15,13 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <style>
+        /* Custom CSS to align Secretaria menu to the left */
+        .navbar-nav.left-menu {
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -29,32 +36,26 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-                        <div class="container-fluid">
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                    <ul class="navbar-nav left-menu">
+                        <!-- Secretaria Dropdown -->
+                        @auth
+                            <li class="nav-item dropdown">
+                                <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Secretaria
                                 </button>
-                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item dropdown">
-                                    <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Secretaria
-                                    </button>
-                                        <ul class="dropdown-menu dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i><b>--Cadastro--</b></i></a></li>
-                                            <li><a class="dropdown-item" href="{{ route('estados.index') }}">Estados</a></li>
-                                            <li><a class="dropdown-item" href="{{ route('cidades.index') }}">Cidades</a></li>
-                                            <li><a class="dropdown-item" href="{{ route('cargos.index') }}">Cargos</a></li>
-                                            <li><a class="dropdown-item" href="#">Grupos</a></li>
-                                            <li><hr class="dropdown-divider"></li>
-                                            <li><a class="dropdown-item" href="#"><b><i>--Relatórios--</i></b></a></li>
-
-                                        </ul>
-                                    </li>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#"><i><b>--Cadastro--</b></i></a></li>
+                                    <li><a class="dropdown-item" href="{{ route('estados.index') }}">Estados</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('cidades.index') }}">Cidades</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('cargos.index') }}">Cargos</a></li>
+                                    <li><a class="dropdown-item" href="#">Grupos</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#"><b><i>--Relatórios--</i></b></a></li>
                                 </ul>
-                            </div>
-                        </div>
+                            </li>
+                        @endauth
                     </ul>
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
@@ -71,22 +72,19 @@
                                 </li>
                             @endif
                         @else
+                            <!-- User Dropdown Menu -->
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ Auth::user()->name }}
                                 </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}</a></li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                </div>
+                                </ul>
                             </li>
                         @endguest
                     </ul>

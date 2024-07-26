@@ -12,8 +12,8 @@ class CargoController extends Controller
      */
     public function index()
     {
-        $cargos = Cargo::orderBy('nome', 'asc')->paginate(10);
-        return view('cargo.index', ['cargos' => $cargos]);
+        $cargos = Cargo::orderBy('nome', 'asc')->paginate(15);
+        return view('cargos.index', ['cargos' => $cargos]);
     }
 
     /**
@@ -21,7 +21,7 @@ class CargoController extends Controller
      */
     public function create()
     {
-        return view('cargo.create');
+        return view('cargos.create');
     }
 
     /**
@@ -35,9 +35,9 @@ class CargoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Cargo $cargo)
     {
-        //
+        return view('cargos.show', ['cargo' => $cargo ]);
     }
 
     /**

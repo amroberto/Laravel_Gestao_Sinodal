@@ -25,14 +25,13 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        @if (count($results > 0))
                         <tbody>
                             @foreach ($cidades as $key => $cidade)
                             <tr>
                                 <td>{{ $cidade['id'] }}</td>
                                 <td>{{ $cidade['nome'] }}</td>
                                 <td>{{ $cidade['codigo_ibge'] }}</td>
-                                <td>{{ $cidade->estado->nome }}</td>
+                                <td>{{ $cidade->estado->uf }}</td>
                                 <td>
                                     <a href="{{ route('cidades.show', $cidade['id']) }}" class="btn btn-success mx-2"><i class="bi bi-eye-fill"></i> Visualizar</a>
                                 </td>
@@ -42,9 +41,6 @@
                         </tbody>
                     </table>
                     {!! $cidades->withQueryString()->links('pagination::bootstrap-5') !!}
-                    @else
-                        <p>Nenhum resultado encontrado!</p>
-                    @endif
                 </div>
 
 
