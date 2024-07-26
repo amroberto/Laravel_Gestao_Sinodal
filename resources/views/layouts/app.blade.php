@@ -21,6 +21,37 @@
         .navbar-nav.left-menu {
             margin-right: auto;
         }
+        
+        /* Custom CSS for multi-level dropdown */
+        .dropdown-menu .dropdown-menu {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .dropdown-submenu {
+            position: relative;
+        }
+        .dropdown-submenu > .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -1px;
+        }
+        .dropdown-submenu:hover > .dropdown-menu {
+            display: block;
+        }
+        .dropdown-submenu > a::after {
+            display: block;
+            content: " ";
+            float: right;
+            border-color: transparent;
+            border-style: solid;
+            border-width: 5px 0 5px 5px;
+            border-left-color: #ccc;
+            margin-top: 5px;
+            margin-right: -10px;
+        }
+        .dropdown-submenu:hover > a::after {
+            border-left-color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -44,11 +75,14 @@
                                     Secretaria
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#"><i><b>--Cadastro--</b></i></a></li>
-                                    <li><a class="dropdown-item" href="{{ route('estados.index') }}">Estados</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('cidades.index') }}">Cidades</a></li>
-                                    <li><a class="dropdown-item" href="{{ route('cargos.index') }}">Cargos</a></li>
-                                    <li><a class="dropdown-item" href="#">Grupos</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item dropdown-toggle" href="#">Cadastro</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="{{ route('estados.index') }}">Estados</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('cidades.index') }}">Cidades</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('cargos.index') }}">Cargos</a></li>
+                                        </ul>
+                                    </li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="#"><b><i>--Relatórios--</i></b></a></li>
                                 </ul>

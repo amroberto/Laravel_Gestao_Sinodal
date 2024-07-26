@@ -10,18 +10,15 @@ class CidadeController extends Controller
     /**
      * Display a listing of thep resource.
      */
-    public function index()
-    {
-        $cidades = Cidade::orderBy("id","desc")->paginate(15);
-        return view('cidades.index',['cidades' => $cidades]);
-    }
-
-    public function search(Request $request)
+    public function index(Request $request)
     {
         $search = $request->input('search');
-        $results = Cidade::where('nome', 'like', "%$search%")->get();
-
-        return view('cidades.index', ['results' => $results]);
+        if($search) {
+            $cidades = Cidade::where('nome', 'like', "%$search%")->paginate(15);
+        } else {
+            $cidades = Cidade::orderBy("id","desc")->paginate(15);
+        }
+        return view('cidades.index', ['cidades' => $cidades]);
     }
     /**
      * Show the form for creating a new resource.
